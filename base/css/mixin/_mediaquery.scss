@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* --------------------------------
+MEDIA QUERY
+@include max-screen($breakpoint-mobile) {}
+@include max-screen($breakpoint-tablet) {}
+
+@include mq {}
+
+'xsmall': 320px,
+'small' : 600px,
+'medium': 768px,
+'large' : 1024px,
+'xlarge': 1280px,
+
+-------------------------------- */
+
+$mq-breakpoints: (
+	'xsmall': 220px,
+	'small' : 600px,
+	'medium': 768px,
+	'large' : 1024px,
+	'xlarge': 1280px,
+);
+
+@mixin mq($breakpoint: medium, $rule: min, $subtraction: true) {
+	$breakpoint: map_get($mq-breakpoints, $breakpoint);
+	@if $rule == max and $subtraction {
+		$breakpoint: $breakpoint - 1;
+	}
+	@media screen and (#{$rule}-width: $breakpoint) {
+		@content;
+	}
+}
+
+$mq-orientation: (
+	'p': 'portrait',
+	'l': 'landscape',
+);
+
+@mixin or( $orientation: l){
+	$orientation: map_get($mq-orientation, $orientation);
+	@media screen and (orientation:$orientation){
+		@content;
+	}
+}

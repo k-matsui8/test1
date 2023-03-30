@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* --------------------------------
+角丸設定
+-------------------------------- */
+@mixin border_radius($br_value) {
+     @each $prefix in $set_prefix {
+          #{$prefix}border-radius: $br_value;
+     }
+}

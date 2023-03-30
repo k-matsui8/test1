@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"  itemscope itemtype="http://schema.org/WebPage">
+<!-- [ include meta/ ] -->
+<?php include(dirname(__FILE__).'./../inc/meta.php'); ?>
+<!-- [ /include meta ] -->
+
+<!-- [ itemprop ] -->
+<meta itemprop="name" content="メディア掲載｜株式会社アプメス">
+<meta itemprop="url" content="https://www.apms-japan.net/media/">
+<meta itemprop="about" content="株式会社アプメスのメディア掲載のページです。人材派遣、セールスプロモーション、イベント運営はアプメスにお任せください。iPadを使ったアンケート回収型抽選機も大好評。イベント丸ごと一括でお手伝いいたします。">
+
+<!-- [ META ] -->
+<meta name="author" content="株式会社アプメス">
+<meta name="keywords" content="派遣,人材派遣,セールスプロモーション,イベント,抽選機,iPad抽選機">
+<meta name="description" content="人材派遣、セールスプロモーション、イベント運営はアプメスにお任せください。iPadを使ったアンケート回収型抽選機も大好評。イベント丸ごと一括でお手伝いいたします。">
+<meta name="rating" content="general" />
+<meta name="coverage" content="japan" />
+<link rel="canonical" href="">
+
+<!-- [ OG ] -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="メディア掲載｜株式会社アプメス"/>
+<meta property="og:description" content="人材派遣、セールスプロモーション、イベント運営はアプメスにお任せください。iPadを使ったアンケート回収型抽選機も大好評。イベント丸ごと一括でお手伝いいたします。" />
+<meta property="og:image" content="https://www.apms-japan.net/ogp.png" />
+<meta property="og:url" content="https://www.apms-japan.net/media/" />
+<meta property="og:site_name" content="株式会社アプメス"/>
+
+<title>インフォメーション｜株式会社アプメス</title>
+
+<link rel="stylesheet" type="text/css" href="/base/css/style.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- [ include header/ ] -->
+<?php include(dirname(__FILE__).'/../inc/js.php'); ?>
+<!-- [ /include header ] -->
+</head>
+
+<body>
+<div id="Loader"></div>
+<div id="contents">
+<!-- [ contents/ ] -->
+
+<!-- [ include header/ ] -->
+<?php include(dirname(__FILE__).'/../inc/header.php'); ?>
+<!-- [ /include header ] -->
+
+	<section id="p-title" class="company">
+		<div class="wrap">
+			<h2 class="page-title">
+				<strong class="textef4">
+					Media
+				</strong>
+				<span>
+					メディア掲載
+				</span>
+			</h2>
+		</div>
+	</section>
+
+
+	<section class="box">
+		<ul class="infolist">
+			<li>
+				<a class="toggle">
+					<time>2019.04.01</time>
+					<h3>株式会社アプメスが「人財力100」に選ばれました！</h3>
+				</a>
+				<div class="infodetail">
+					<p>この度、株式会社アプメスが人財採用と育成に力を入れている企業100社を選出する「人財力100」に選ばれました！</p>
+					<!--<p>社長のインタビュー記事が掲載されていますので、是非ご一読ください。</p>
+					<p>URL  <a  href="https://jinzai100.jp/interview/apms-japan/" target="_blank">https://jinzai100.jp/interview/apms-japan/</a></p>-->
+				</div>
+			</li>
+		</ul>
+
+	</section>
+
+
+<!-- [ include header/ ] -->
+<?php include(dirname(__FILE__).'/../inc/footer.php'); ?>
+<!-- [ /include header ] -->
+
+<!-- [ /contents ] -->
+</div>
+
+<!-- JS -->
+
+
+<script src="/base/js/common.js"></script>
+<script>
+$(function() {
+
+	function infodetail() {
+		$(this).next().slideToggle(300);
+	}
+	$(".toggle").click(infodetail);
+});</script>
+
+
+</body>
+</html>

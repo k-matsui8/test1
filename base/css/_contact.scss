@@ -1,0 +1,229 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+
+.entrytable{
+ 	border-collapse:collapse; border:1px solid #ddd; width:100%; background:#fff;
+		tr{
+			th,td{ border:1px solid #ddd; padding:16px;
+			}
+			th{@include font-size(9); width:300px; text-align:left; position:relative;
+				.must{ display:inline-block; line-height:1; padding:6px; background:rgba(255,0,4,1.00); color:#fff;@include font-size(7); margin-right:16px;}
+
+				@include mq(xsmall){
+					width: 100%;
+					display: block;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					display: table-cell;
+					width: auto;
+				}
+				@include mq(large){
+				}
+				@include mq(xlarge){
+				}
+
+			}
+			td{@include font-size(9);
+
+				@include mq(xsmall){
+					width: 100%;
+					display: block;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					display: table-cell;
+					width: auto;
+				}
+				@include mq(large){
+				}
+				@include mq(xlarge){
+				}
+
+				p{@include font-size(8); padding-bottom: 0; margin-bottom: 0;}
+				input{ margin:0; padding:0; width:100%; border:1px solid #ddd; background:#eee; padding:8px;@include font-size(13);
+				}
+				input[type="radio"]{ display:inline-block; width:auto; margin-right:8px; position:relative; top:-2px;}
+				input[type="checkbox"]{ display:inline-block; width:auto; margin-right:8px; position:relative; top:-2px;}
+				label{ margin-right:16px;}
+				textarea{ margin:0; padding:0; width:100%; border:1px solid #ddd; background:#eee; padding:8px;@include font-size(13); max-width:100%;resize: none;   height:300px;}
+			}
+		}
+
+}
+
+div.page.contact-top{
+	div.wrap {
+
+		@include mq(xsmall){
+			padding: 8px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			padding: 16px;
+		}
+		@include mq(large){
+			padding: 24px;
+		}
+		@include mq(xlarge){
+		}
+
+		h2 { padding:16px;
+		}
+		table{ border-collapse:collapse; border:1px solid #ddd; width:100%; background:#fff;
+			tr{
+				th,td{ border:1px solid #ddd; padding:16px;
+				}
+				th{@include font-size(9); width:300px; text-align:left; position:relative;
+					.must{ display:inline-block; line-height:1; padding:6px; background:rgba(255,0,4,1.00); color:#fff;@include font-size(7); margin-right:16px;}
+
+					@include mq(xsmall){
+						width: 100%;
+						display: block;
+					}
+					@include mq(small){
+					}
+					@include mq(medium){
+						display: table-cell;
+						width: auto;
+					}
+					@include mq(large){
+					}
+					@include mq(xlarge){
+					}
+
+				}
+				td{@include font-size(9);
+
+					@include mq(xsmall){
+						width: 100%;
+						display: block;
+					}
+					@include mq(small){
+					}
+					@include mq(medium){
+						display: table-cell;
+						width: auto;
+					}
+					@include mq(large){
+					}
+					@include mq(xlarge){
+					}
+
+					p{@include font-size(8); padding-bottom: 0; margin-bottom: 0;}
+					input{ margin:0; padding:0; width:100%; border:1px solid #ddd; background:#eee; padding:8px;@include font-size(9);
+					}
+					input[type="radio"]{ display:inline-block; width:auto; margin-right:8px; position:relative; top:-2px;}
+					input[type="checkbox"]{ display:inline-block; width:auto; margin-right:8px; position:relative; top:-2px;}
+					label{ margin-right:16px;}
+					textarea{ margin:0; padding:0; width:100%; border:1px solid #ddd; background:#eee; padding:8px;@include font-size(9); max-width:100%;resize: none;   height:300px;}
+				}
+			}
+		}
+		div.choce{ padding:16px; background:#ddd;
+			table{
+				tr{
+					th{ width:284px;
+					}
+				}
+			}
+
+		}
+
+		ul{@include flex; flex-wrap:wrap;
+			li{ padding:16px; flex:1; text-align:center; position:relative;
+				input{@include font-size(13); color:#222; padding:16px; border:1px solid #ccc; background:#fff; line-height:1;-webkit-appearance: none; outline:none;
+
+				}
+				input[type="submit"]{ border:0px solid rgba(255,138,140,1.00); background:$r; color:#fff; padding:16px 50px;
+				border-radius: 80px;}
+				input[type="button"]{@include font-size(10);padding:8px; color:#222; position:absolute; right:0; top:10px;
+
+				}
+			}
+		}
+
+
+		.submit{ text-align:center; padding:16px;
+			input{@include font-size(12); color:#222; padding:24px; border:1px solid #ccc; background:#fff; line-height:1;-webkit-appearance: none; outline:none;
+
+			}
+		}
+		a.totop{ display:block; text-align:center; padding-bottom:150px;
+			span{ display:inline-block; line-height:1; padding:8px; border:1px solid #ccc; color:#333;}
+		}
+	}
+}
+
+
+.contact-comp{
+	padding: 24px 0;
+
+	@include mq(xsmall){
+		text-align: left;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		text-align: center;
+	}
+	@include mq(large){
+	}
+	@include mq(xlarge){
+	}
+
+	h2{
+		padding: 16px;
+		@include font-size(16);
+	}
+	p{
+		padding: 16px;
+		@include font-size(10);
+		margin-bottom: 32px;
+	}
+	p.center{
+		text-align: center;
+	}
+	a{
+		@include font-size(10);
+		@include hover;
+		color: #333;
+		display: inline-block;
+		border: 1px solid #ccc;
+		padding: 16px;
+		line-height: 1;
+	}
+
+}

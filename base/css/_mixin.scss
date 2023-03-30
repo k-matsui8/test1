@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+
+-------------------------------- */
+/* SETTING */
+$min-w:1000;
+$max-w:1280px;
+$smp-w:100%;
+
+/* SNS COLOR */
+$twitter:#00aced;
+$facebook:#305097;
+$line:#5ae628;
+
+
+$r:#9F031B;
+$g:#6FBA2C;
+$b:#00A0E9;
+$y:#FFE200;
+
+/* width設定 */
+@mixin w_auto{
+
+	margin:0 auto;
+	padding:0 24px;
+
+	@include mq(xsmall){
+		width: 100%;
+		padding:0;
+	}
+	@include mq(small){
+		width: 100%;
+		padding:0;
+	}
+	@include mq(medium){
+		width: 100%;
+		padding:0;
+	}
+	@include mq(large){
+		//max-width: 1024px;
+		padding:0 24px;
+	}
+	@include mq(xlarge){
+		//max-width: 1280px;
+	}
+
+}
+
+@mixin flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+}
+
+@mixin flexnone{
+    display: block;
+}
+
+/* mixin */
+@import "mixin/_common.scss";
+@import "mixin/_browser.scss";
+@import "mixin/_clear.scss";
+@import "mixin/_font.scss";
+@import "mixin/_mediaquery.scss";
+@import "mixin/_radius.scss";

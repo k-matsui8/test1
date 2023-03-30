@@ -1,0 +1,1148 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+.ggmap {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.ggmap iframe,
+.ggmap object,
+.ggmap embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.privacy{
+	padding: 16px;
+	h3{
+		border: 1px solid #ccc;
+		background: #eee;
+		padding: 16px;
+		font-weight: normal;
+		@include font-size(9);
+	}
+	p{
+		@include font-size(8);
+		padding-top: 16px;
+		strong{
+
+		}
+	}
+	table{
+		@include font-size(8);
+		margin: 16px 0;
+		width: 100%;
+		tr{
+			th,td{
+				@include mq(xsmall){
+					display: table-cell;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					display: table-cell;
+				}
+				@include mq(large){
+					display: table-cell;
+				}
+				@include mq(xlarge){
+				}
+			}
+		th{
+			width: 50%;
+			@include font-size(8);
+		}
+		td{
+			width: 50%;
+			@include font-size(8);
+		}
+		}
+	}
+
+	ul{
+		@include font-size(8);
+	}
+
+}
+
+//form
+.submit{
+	text-align: center;
+	input{
+		text-align: center;
+		display: inline-block;
+		line-height: 1;
+		background: $r;
+		color: #fff;
+		border: none;
+		@include font-size(15);
+		padding: 16px 32px;
+		border-radius: 60px;
+		@include hover;
+		cursor: pointer;
+	}
+}
+
+//アンカータグ用のリンク設定（fixedの相殺）
+.ancker{
+	display: block;
+	@include mq(xsmall){
+		margin-top: -50px;
+		padding-top: 50px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		margin-top: -59px;
+		padding-top: 59px;
+	}
+	@include mq(large){
+		margin-top: -110px;
+		padding-top: 110px;
+	}
+	@include mq(xlarge){
+	}
+}
+
+
+.flex4{
+	@include flex;
+	li{
+
+		 @include mq(xsmall){
+			 width: 100%;
+		 }
+		 @include mq(small){
+		 }
+		 @include mq(medium){
+			 flex: 1;
+		 }
+		 @include mq(large){
+		 }
+		 @include mq(xlarge){
+		 }
+	}
+}
+
+
+
+
+.box{
+
+	@include w_auto;
+	@include mq(xsmall){
+		padding-bottom: 8px;
+		margin-bottom: 8px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding-bottom: 16px;
+		margin-bottom: 16px;
+	}
+	@include mq(large){
+		padding-bottom: 32px;
+		margin-bottom: 32px;
+	}
+	@include mq(xlarge){
+	}
+
+	&.entry{
+		background: #fff;;
+		border-top: 2px solid #ddd;
+	}
+
+	&.flex{
+		flex-direction: row-reverse;
+	}
+	//@include clear;
+	.main{
+
+		@include mq(xsmall){
+			width: 100%;
+			padding: 0 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			width: 70%;
+			padding-bottom: 24px;
+		}
+		@include mq(xlarge){
+		}
+
+
+	}
+	.side{
+		@include mq(xsmall){
+			width: 100%;
+			padding: 0 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			width: 30%;
+			padding-top: 24px;
+		}
+		@include mq(xlarge){
+		}
+	}
+
+}
+
+.side{
+	@include font-size(10);
+	padding: 24px;
+	ul{
+
+		padding: 8px;
+		li{
+			width: 100%;
+			border: 1px solid #ddd;
+			border-left: 6px solid $r;
+			margin-bottom: 16px;
+			padding: 16px;
+			&:last-child{
+				//border-bottom: none;
+			}
+			a{
+				display: block;
+				color: #222;
+				h2{
+					color: $r;
+					@include font-size(12);
+					span{
+						color: #999;
+						@include font-size(9);
+						display: block;
+					}
+				}
+				h3{
+					@include font-size(9);
+					padding-top: 8px;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+.visual{
+	margin-bottom: 16px;
+	text-align: center;
+	position: relative;
+	img{
+		max-width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.over_b{
+	position: absolute;
+	z-index: 4;
+	top: 0;
+	width: 100%;
+	left:0;
+	img{
+		//osition: absolute;
+		max-width: none;
+
+	}
+
+	.i1{
+		position: absolute;
+		left: 50%;
+		margin-left: -100px;
+		top: 0px;
+	}
+	.i2{
+		position: absolute;
+		right: 50%;
+		margin-right: -305px;
+		top: 70px;
+	}
+	.i3{
+		position: absolute;
+		right: 50%;
+		margin-right: -340px;
+		top: 290px;
+	}
+	.i4{
+		position: absolute;
+		right: 50%;
+		margin-right: -230px;
+		top: 480px;
+	}
+	.i5{
+		position: absolute;
+		left: 50%;
+		margin-left: -200px;
+		top: 490px;
+	}
+	.i6{
+		position: absolute;
+		left: 50%;
+		margin-left: -330px;
+		top: 310px;
+	}
+	.i7{
+		position: absolute;
+		left: 50%;
+		margin-left: -300px;
+		top: 90px;
+	}
+
+}
+
+.over_c{
+	@include mq(xsmall){
+		padding-top: 16px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding-top: 0px;
+	}
+	@include mq(large){
+	}
+	@include mq(xlarge){
+	}
+
+	div{
+
+		@include mq(xsmall){
+			margin-bottom: 16px;
+			padding: 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 400px;
+			height:400px;
+			border-radius: 50%;
+			background: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -195px;
+			margin-left: -200px;
+			z-index: 4;
+			padding: 50px 40px;
+			display: none;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+
+
+		h4{
+			text-align: center;
+
+			span{
+				display: block;
+				@include font-size(14);
+			}
+			@include mq(xsmall){
+				@include font-size(15);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				@include font-size(18);
+			}
+			@include mq(large){
+				@include font-size(32);
+			}
+			@include mq(xlarge){
+			}
+
+
+		}
+		p{
+			@include font-size(9);
+			text-align: left;
+			padding: 2px;
+			border-top: 1px solid #ddd;
+		}
+		&.pay{
+			border:10px solid #F8B62C;
+			color: #F8B62C;
+			h4{
+				color: #F8B62C;
+			}
+		}
+		&.tool{
+			border:10px solid #90C320;
+			color: #90C320;
+			h4{
+				color: #90C320;
+			}
+		}
+		&.sales{
+			border:10px solid #01913A;
+			color: #01913A;
+			h4{
+				color: #01913A;
+			}
+		}
+		&.shop{
+			border:10px solid #2EA6E2;
+			color: #2EA6E2;
+			h4{
+				color: #2EA6E2;
+			}
+		}
+		&.service{
+			border:10px solid #920884;
+			color: #920884;
+			h4{
+				color: #920884;
+			}
+		}
+		&.after{
+			border:10px solid #E60012;
+			color: #E60012;
+			h4{
+				color: #E60012;
+			}
+		}
+		&.system{
+			border:10px solid #EA5513;
+			color: #EA5513;
+			h4{
+				color: #EA5513;
+			}
+		}
+
+	}
+
+
+}
+
+.flex{
+	@include flex;
+	@include mq(xsmall){
+		padding: 0 0px;
+		padding-top: 8px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding: 0 16px;
+		padding-top: 16px;
+	}
+	@include mq(large){
+		padding: 0 32px;
+		padding-top: 16px;
+	}
+	@include mq(xlarge){
+	}
+
+	h4{
+		color: $r;
+		margin-bottom: 16px;
+		@include mq(xsmall){
+			@include font-size(14);
+			//text-align: center;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			text-align: left;
+		}
+		@include mq(large){
+			@include font-size(16);
+		}
+		@include mq(xlarge){
+		}
+	}
+	p{
+		padding-bottom: 16px;
+		@include mq(xsmall){
+			@include font-size(9);
+			line-height: 1.8;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			@include font-size(10);
+			line-height: 2;
+		}
+		@include mq(xlarge){
+		}
+	}
+	li{
+		padding: 16px;
+		@include mq(xsmall){
+			width: 100%;
+			//text-align: center;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 50%;
+			text-align: left;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+		&.pd2{
+			padding: 0 16px;
+		}
+	}
+
+	.w30{
+		@include mq(xsmall){
+			width: 100%;
+			text-align: center;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 30%;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+	.w50{
+		@include mq(xsmall){
+			width: 100%;
+			text-align: center;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 50%;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+	.w70{
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 70%;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+	.w100{
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 100%;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+
+
+	&.row4{
+		padding: 24px;
+		a{
+			color: $r;
+			display: block;
+			padding: 16px;
+
+			@include hover;
+		}
+		img{
+			margin-bottom: 8px;
+		}
+		li{
+			border: 1px solid #ddd;
+			@include mq(xsmall){
+				width: 100%;
+				padding: 4px;
+				@include font-size(8);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 50%;
+			}
+			@include mq(large){
+				width: 25%;
+				padding: 8px;
+				@include font-size(9);
+			}
+			@include mq(xlarge){
+			}
+		}
+	}
+
+	&.row2{
+		padding: 0px;
+
+		li{
+			@include mq(xsmall){
+				background: #fff;
+				padding: 16px;
+				@include font-size(8);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(9);
+			}
+			@include mq(xlarge){
+			}
+			strong{
+				display: inline-block;
+				background: #ccc;
+				border-radius: 30px;
+				padding: 8px 16px;
+			}
+			ul{
+				background: #eee;
+				margin: 1em 2em;
+				li{
+					list-style: circle;
+					padding: 0;
+					width: 100%;
+					color: #666;
+				}
+			}
+			p{
+				line-height: 1.6;
+				padding: 16px;
+				@include mq(xsmall){
+					@include font-size(7);
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+				}
+				@include mq(large){
+					@include font-size(8);
+				}
+				@include mq(xlarge){
+				}
+			}
+
+			.link{
+				a{
+					@include hover;
+					img{}
+				}
+			}
+
+			h3{
+				@include mq(xsmall){
+					@include font-size(11);
+					padding: 16px 0 16px 16px;
+					text-align: center;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+				}
+				@include mq(large){
+					@include font-size(14);
+				}
+				@include mq(xlarge){
+				}
+				span{
+					display: block;
+					@include font-size(12);
+					color: $r;
+				}
+			}
+			h4{
+				@include mq(xsmall){
+					padding: 0 16px;
+					margin-bottom: 0;
+					@include font-size(11);
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+				}
+				@include mq(large){
+					@include font-size(14);
+				}
+				@include mq(xlarge){
+				}
+			}
+		}
+	}
+
+	&.rev{
+
+		@include mq(xsmall){
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			flex-flow: row-reverse;
+		}
+		@include mq(large){
+			flex-flow: row-reverse;
+		}
+		@include mq(xlarge){
+		}
+	}
+
+
+}
+
+.toggle{
+	cursor: pointer;
+	display: block;
+}
+.infodetail{
+	display: none;
+	text-align: left;
+	padding: 16px;
+	p{
+		padding: 16px;
+		border: 1px solid #ddd;
+		@include font-size(10);
+		a{
+			color: $r;
+			text-decoration: underline;
+		}
+	}
+}
+
+.cont-title{
+	text-align: center;
+	padding: 24px;
+	&.btn0{
+		padding-bottom: 0;
+	}
+	&:after{
+		content: "";
+		background:#ccc;
+		width: 32px;
+		height: 2px;
+		margin: 18px auto;
+		display: block;
+	}
+		strong{
+			color:  $r;
+			@include mq(xsmall){
+				@include font-size(18);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(24);
+			}
+			@include mq(xlarge){
+			}
+		}
+
+		strong.min{
+			color:  $r;
+			@include mq(xsmall){
+				@include font-size(12);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(16);
+			}
+			@include mq(xlarge){
+			}
+		}
+
+		span{
+			color: #999;
+			line-height: 1;
+			display: block;
+			font-weight: normal;
+			padding-bottom: 8px;
+			@include mq(xsmall){
+				@include font-size(12);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(11);
+			}
+			@include mq(xlarge){
+			}
+		}
+}
+
+
+.table{
+	border-collapse: collapse;
+	margin: 0 auto 16px;
+	@include mq(xsmall){
+		width: 90%;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		width: 80%;
+	}
+	@include mq(large){
+		width: 70%;
+	}
+	@include mq(xlarge){
+	}
+	&.w100{
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 100%;
+		}
+		@include mq(large){
+			width: 100%;
+		}
+		@include mq(xlarge){
+		}
+		tr{
+			th,td{
+				border: 1px solid #ccc;
+				padding: 16px;
+				@include mq(xsmall){
+					@include font-size(8);
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+				}
+				@include mq(large){
+					@include font-size(9);
+				}
+				@include mq(xlarge){
+				}
+			}
+			th{
+				@include mq(xsmall){
+					width: 100%;
+					display: block;
+					text-align: left;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					width: 20%;
+					display: table-cell;
+					text-align:left;
+				}
+				@include mq(large){
+				}
+				@include mq(xlarge){
+				}
+			}
+			td{
+				text-align: left;
+				@include mq(xsmall){
+					width: 100%;
+					display: block;
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					width: 80%;
+					display: table-cell;
+				}
+				@include mq(large){
+				}
+				@include mq(xlarge){
+				}
+
+			}
+		}
+	}
+
+	hr{
+		border: none;
+		height: 1px;
+		background: #ddd;
+		margin: 16px 0
+	}
+
+	tr{
+		th,td{
+			border: 1px solid #ccc;
+			padding: 16px;
+			@include mq(xsmall){
+				@include font-size(8);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(10);
+			}
+			@include mq(xlarge){
+			}
+		}
+		th{
+			background: #eee;
+			@include mq(xsmall){
+				width: 100%;
+				display: block;
+				text-align: left;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 20%;
+				display: table-cell;
+				text-align:center;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+		td{
+			@include mq(xsmall){
+				width: 100%;
+				display: block;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 80%;
+				display: table-cell;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+
+		}
+	}
+}
+
+#p-title{
+	text-align: center;
+	background: #222;
+
+	color: #fff;
+	&:after{
+		content: "";
+		background: $r;
+		width: 32px;
+		height: 4px;
+		margin: 0 auto;
+		display: block;
+	}
+	@include mq(xsmall){
+		width: 100%;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+	}
+	@include mq(xlarge){
+	}
+	.wrap{
+		padding: 48px;
+	}
+	.page-title{
+		strong{
+			@include mq(xsmall){
+				@include font-size(14);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(18);
+			}
+			@include mq(xlarge){
+			}
+		}
+		span{
+			color: #999;
+			line-height: 1;
+			display: block;
+			padding-bottom: 8px;
+			@include mq(xsmall){
+				@include font-size(7);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(9);
+			}
+			@include mq(xlarge){
+			}
+		}
+	}
+}
+
+.adv-business{
+	a{
+		color: #222;
+		@include hover;
+		display: block;
+		img{
+			width: 100%;
+			height: auto;
+		}
+		h2{
+			padding-top: 16px;
+			padding-bottom: 16px;
+			@include font-size(14);
+			color: #fff;
+			background: $r;
+			font-weight: normal;
+			span{
+				display: block;
+				@include font-size(9);
+				color: #eee;
+			}
+		}
+		h3{
+			@include font-size(11);
+			padding: 8px;
+			font-weight: normal;
+		}
+		p{
+			@include font-size(9);
+			color: #999;
+		}
+	}
+}
+
+.point{
+	text-align: center;
+	span{
+		display: inline-block;
+		padding: 8px 16px;
+		background: $r;
+		color: #fff;
+	}
+}
+.point-c-title{
+	color: $r;
+	@include font-size(12);
+	padding: 16px;
+}
+
+.list{
+	margin-left: 1em;
+	li{
+		@include font-size(9);
+		width: 100%;
+		list-style: circle;
+		padding: 0;
+	}
+}
+
+.c-title{
+	padding: 8px;
+	border-bottom: 2px solid $r;
+	margin-bottom: 8px;
+	strong{
+		line-height: 1;
+		color: $r;
+		@include mq(xsmall){
+			@include font-size(11);
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			@include font-size(13);
+		}
+		@include mq(xlarge){
+		}
+	}
+	span{
+		color: #999;
+		line-height: 1;
+		display: block;
+		padding-bottom: 8px;
+		@include mq(xsmall){
+			@include font-size(7);
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			@include font-size(9);
+		}
+		@include mq(xlarge){
+		}
+	}
+}

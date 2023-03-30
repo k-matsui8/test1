@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Twenty Minutes\n"
+"POT-Creation-Date: 2016-09-26 00:57+0530\n"
+"PO-Revision-Date: 2016-09-26 00:57+0530\n"
+"Last-Translator: \n"
+"Language-Team: ClassicTemplate <support@classictemplate.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;__;gettext;gettext_noop;esc_attr;esc_attr__;"
+"esc_attr_e;esc_html;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:32 category.php:35 index.php:32 search.php:26
+msgid "Back"
+msgstr ""
+
+#: archive.php:33 category.php:36 index.php:33 search.php:27
+msgid "Next"
+msgstr ""
+
+#: archive.php:34 category.php:37 index.php:34 search.php:28
+msgid "Posts navigation"
+msgstr ""
+
+#: content-page.php:18 content-single.php:26 content.php:32 image.php:59
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:23 content-single.php:42 image.php:33 image.php:65
+#: inc/template-tags.php:23
+msgid "Edit"
+msgstr ""
+
+#: content.php:29
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: footer.php:13
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:13
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: functions.php:32
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:45
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:46
+msgid "Appears on blog page sidebar"
+msgstr ""
+
+#: functions.php:56
+msgid "Header Widget"
+msgstr ""
+
+#: functions.php:57
+msgid "Appears on header of site"
+msgstr ""
+
+#: image.php:23
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\">%4$s &times; %5$s</a> in <a "
+"href=\"%6$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:38
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:39
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/about-themes.php:11
+msgid "About Theme Info"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "Color Options"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "More color options in pro version."
+msgstr ""
+
+#: inc/template-tags.php:127
+#, php-format
+msgid ""
+"<span class=\"posted-on\">Published %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+
+#: no-results.php:18
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""

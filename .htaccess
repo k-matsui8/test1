@@ -1,0 +1,16 @@
+Action myphp-script /php.cgi
+AddHandler myphp-script .php .html
+
+ErrorDocument 404 /404.html
+
+RewriteEngine on
+RewriteRule ^company.html$ https://www.apms-japan.net/company/ [R=301,L]
+RewriteRule ^philosophy.html$ https://www.apms-japan.net/company/outline/ [R=301,L]
+RewriteRule ^history.html$ https://www.apms-japan.net/company/history/ [R=301,L]
+RewriteRule ^advantage.html$ https://www.apms-japan.net/advantage/ [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.apms-japan.net/ [R,L]
+
+# RewriteEngine on
+# RewriteRule ^contact(.*)$ /$1 [L,R=301]

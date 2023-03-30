@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+
+#slide{
+
+	@include mq(xsmall){
+		//height: 270px;
+		overflow: hidden;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		height: 600px;
+	}
+	@include mq(xlarge){
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+
+	//swiper over css
+	.swiper-pagination-bullet-active{
+		background: $r;
+	}
+	.swiper-container-rtl{
+		display: none;
+	}
+	.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+		background-image: none;
+		background-image: url(../img/right.svg);
+	}
+	.swiper-button-prev, .swiper-container-rtl .swiper-button-prev{
+		background-image: none;
+		background-image: url(../img/left.svg);
+	}
+
+}
+
+/* info周り */
+#top_contents{
+	@include w_auto;
+	@include flex;
+
+	@include mq(xsmall){
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		padding: 8px 8px;
+	}
+	@include mq(xlarge){
+	}
+	.box1{
+		padding: 8px;
+		&.bnr-wrap{
+			@include flex;
+			@include mq(xsmall){
+				width: 100%;
+			}
+			@include mq(medium){
+				width: 20%;
+				padding-right: 0;
+			}
+		}
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(medium){
+			width: 80%;
+			padding-right: 16px;
+		}
+
+
+
+		//banner
+		.banner{
+			display: block;
+			width: 100%;
+			img{
+				width: 100%;
+				max-width: none;
+				height: auto;
+				margin-bottom: 8px;
+			}
+
+		}
+	}
+
+
+	//info
+	.information{
+		h2{
+			position: relative;
+			.more{
+				position: absolute;
+				right: 0;
+				bottom: 16px;
+				p{
+					 border-radius: 30px;
+					  border: 1px solid #ccc;
+					 color: #999;
+					 line-height: 1;
+					 padding: 8px 16px;
+					 @include font-size(9);
+					 font-weight: normal;
+				}
+			}
+		}
+		ul{
+			li{
+				padding: 8px;
+				border-bottom: 1px dotted #999;
+				a{
+					display: block;
+					@include flex;
+					@include font-size(10);
+					@include hover;
+					&:hover{
+						text-decoration: underline;
+					}
+
+				}
+				time{
+					padding-right: 16px;
+					color: #999;
+					@include font-size(10);
+				}
+				h3{
+					color: $r;
+					@include font-size(10);
+					font-weight: normal;
+				}
+			}
+		}
+
+	}
+
+
+}
+
+/* 事業リスト */
+#top_business{
+	padding: 16px;
+	background: #eee;
+	ul{
+		@include w_auto;
+		padding: 16px;
+		li{
+
+
+				margin: 8px;
+				border: 1px solid #ddd;
+				border-top: 4px solid $r;
+				overflow: hidden;
+				background: #fff;
+
+			a{
+				 color: #333;
+				 display: block;
+				 text-align: center;
+				 position: relative;
+				 @include hoverimg3;
+				 //@include hover;
+				 .hov{
+		 				position: relative;
+						z-index: 200;
+						@include flex;
+						justify-content: center;
+						align-items: center;
+
+		 				h3{
+		 					position: absolute;
+							height: 100%;
+		 					opacity: 0;
+							top: 0;
+							left:0;
+
+		 					text-align: center;
+							z-index: 200;
+							width: 100%;
+							@include flex;
+							flex: 1;
+							justify-content: center;
+							align-items: center;
+		 				}
+		 				img{}
+		 			}
+					&:hover{
+					 .hov{
+						 background: #000;
+						 h3{
+							 opacity: 1;
+							 color: #fff;
+							 background: rgba(0, 0,0, .5);
+						 }
+					 }
+					}
+
+			}
+
+
+
+			h2{
+
+				padding: 16px;
+				color: $r;
+				@include font-size(11);
+				@include mq(medium){
+
+				}
+				@include mq(large){
+
+
+				}
+				@include mq(xlarge){
+					@include font-size(12);
+				}
+				&:after{
+					content: "";
+					display: block;
+					width: 24px;
+					height: 3px;
+					background: #ccc;
+					margin: 16px auto 0;
+				}
+			}
+			h3{
+				@include font-size(8);
+				padding: 0 16px 16px;
+				color: #666;
+				font-weight: normal;
+			}
+			img{}
+			p{
+				text-align: left;
+				border-top: 1px solid #ddd;
+				padding: 16px;
+				color: #666;
+				@include font-size(8);
+			}
+
+
+		}
+	}
+
+}

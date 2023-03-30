@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* --------------------------------
+
+Site Name: [  ]
+Site URI: [  ]
+Description: [ ]
+Version: [ 1.0 ]
+Author: gramglan
+Author URI: gramglan.work
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+-------------------------------- */
+/* font-family @include font;*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@mixin font{
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+
+/* SITE COLOR */
+
+/* mixin
+mixinの編集
+・汎用的に編集する箇所は_mixin.scssに記載
+　他にはminin/_common.scssないのhover処理など。
+・フォントサイズはpxの他にremを自動指定
+・他サイト単位で追加する場合は_common.scssに追記もしくはmixin用の@importを追加
+*/
+@import "mixin";
+@import "ajax/_animate";
+
+/* 基本設定 */
+@import "common";
+
+/* レイアウト設定 */
+@import "header";
+@import "footer";
+
+/* 各ページ */
+@import "parts";
+@import "top";
+@import "company";
+@import "contact";
+
+
+#contents {
+  //  padding-top: 114px;
+}
+
+header#header{
+	border-top: none;
+}
+
+header#header .head{
+
+	margin: 0 auto;
+}
+
+nav{
+	background: #fff;
+}
+
+header#header .wrap{
+
+	margin: 0 auto;
+	//padding: 10px 0;
+}
+
+header#header ul.modal-content{
+	border-top: none;
+}
+
+header#header ul.modal-content li {
+    border-left: 1px solid #9F031B;
+}
+
+header#header ul.modal-content li:last-child {
+    border-left: 1px solid #9F031B;
+	//border-right: 1px solid #9F031B;
+}
+
+header#header ul.modal-content li a {
+  //color: #000;
+	//padding: 0;
+	font-size: 0.8rem;
+}
+
+header#header ul.modal-content li a span {
+    color: #9F031B;
+	font-size: 0.5rem;
+}
+
+.swiper-slide{
+
+}
+
+#top_business {
+    padding: 24px 0 0;
+    background: #fff;
+
+	margin: 0 auto;
+}
+
+#top_business ul li {
+    margin: 8px;
+    border: none;
+    border-top: none;
+}
+
+#top_business ul li h2 {
+    padding: 16px;
+    font-size: 1rem;
+}
+
+#top_business ul li h3 {
+    font-size: 8px;
+    font-size: 0.9rem;
+	color: #000;
+}
+
+#top_contents .box1.bnr-wrap {
+    //display: none;
+}
+
+#top_contents {
+
+}
+
+#top_contents .box1 {
+    //padding: 0;
+}
+
+.forbiz {
+	width: 1050px;
+
+	margin: 50px auto 100px;
+}
+
+#footer .footer_contents{
+
+	margin: 0 auto;
+}
+
+#footer div {
+	width: auto;
+}
+
+#footer .links {
+    float: left;
+}
+
+#footer .copyright {
+    float: right;
+}
+
+.visual {
+
+	//margin:20px auto;
+}
+
+.box {
+
+	margin: 50px auto;
+	&.mg0{
+		margin: 0;
+	}
+}
+
+.flex {
+
+	margin: 0 auto;
+    padding: 0;
+    padding-top: 0;
+}
+
+.table {
+    width: 100%;
+}
+
+.table tr th {
+    background: #fff;
+}
+
+.table tr th, .table tr td {
+    border: none;
+	border-bottom: 1px solid #9F031B;
+}
+
+.table tr th{
+	font-weight: normal;
+	color: #9F031B;
+}
+
+.flex li {
+    padding: 0;
+}
+
+.flex.row4 {
+    padding: 0;
+}
+
+div.page.contact-top div.wrap table tr th {
+	font-weight: normal;
+	color: #000;
+}
+
+div.page.contact-top div.wrap .submit input {
+    border: 1px solid #fff;
+    background: #9F031B;
+	color: #fff;
+	margin-top: 30px;
+}
+
+div.page.contact-top div.wrap .submit input:hover {
+    border: 1px solid #9F031B;
+    background: #fff;
+	color: #9F031B;
+}
+
+.merit .w50 {
+    padding: 20px;
+}
+
+.merit li ol li {
+	border: none;
+    border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.contblock .w50 {
+    padding: 20px;
+}
+
+.contblock .w50 img{
+	display: none;
+}

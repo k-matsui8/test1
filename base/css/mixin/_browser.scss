@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* --------------------------------
+サポートブラウザの設定
+-------------------------------- */
+$support-ie6: false;
+$support-ie7: true;
+$support-ie8: true;
+$support-ie9: true;
+$support-mozilla: true;
+$support-webkit : true;
+$support-opera  : true;
+
+/* ベンダープレフィックス */
+$set_prefix: -webkit-, -moz-, -ms-, -o-, '';

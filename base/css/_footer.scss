@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+	content: 'xsmall';
+}
+@include mq(small){
+	content: 'small';
+}
+@include mq(medium){
+	content: 'medium';
+}
+@include mq(large){
+	content: 'large';
+}
+@include mq(xlarge){
+	content: 'xlarge';
+}
+
+-------------------------------- */
+.forbiz{
+
+	border: 2px solid $r;
+	padding: 24px;
+	@include flex;
+	margin: 16px auto;
+
+
+	@include mq(xsmall){
+		width: 90%;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		width: 90%;
+	}
+	@include mq(large){
+		width: 80%;
+
+	}
+	@include mq(xlarge){
+		width: 70%;
+	}
+
+	h2{
+		color: $r;
+		@include mq(xsmall){
+			width: 100%;
+			border-bottom: 1px solid $r;
+			margin-bottom: 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 30%;
+			border-bottom:none;
+			margin-bottom:0;
+			border-right: 1px solid $r;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+		strong{
+			display: block;
+			@include font-size(12);
+		}
+		span{
+			display: block;
+			@include font-size(9);
+		}
+	}
+	p{
+
+
+		@include font-size(9);
+
+		@include mq(xsmall){
+			width: 100%;
+			padding: 0px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			width: 70%;
+			padding-left: 24px;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+
+		strong{
+
+
+			color: $r;
+
+			@include mq(xsmall){
+				@include font-size(18);
+				display: block;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: inline-block;
+				@include font-size(20);
+			}
+			@include mq(large){
+				display: inline-block;
+				@include font-size(24);
+			}
+			@include mq(xlarge){
+			}
+		}
+		span{
+			color: #999;
+		}
+	}
+}
+#footer{
+	border-top: 1px solid #ddd;
+	padding: 24px;
+	@include flex;
+	@include font-size(8);
+	div{
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(medium){
+			flex: 1;
+		}
+		a{
+			color: #222;
+			@include hover;
+			padding: 4px;
+			line-height: 1;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.links{
+		@include mq(xsmall){
+			text-align: center;
+		}
+		@include mq(large){
+			text-align: left;
+		}
+	}
+	.copyright{
+
+		@include mq(xsmall){
+			text-align: center;
+		}
+		@include mq(large){
+			text-align: right;
+		}
+		flex-direction: row-reverse;
+
+	}
+
+}

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* --------------------------------
+clearfix
+-------------------------------- */
+@mixin clear {
+		@if $support-ie6 or $support-ie7 {
+			*zoom: 1;
+		}
+		&:after {
+			content: "."; 
+			display: block;
+			clear: both;
+			height: 0; 
+			visibility: hidden;
+		}
+}

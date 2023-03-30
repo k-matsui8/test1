@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+*{
+	@include box-sizing(border-box);
+	@include mp0;
+}
+body,
+html{
+	height:100%;
+}
+body{
+	@include mp0;
+	@include font;
+	font-size: 100%;
+	@include font-size(14);
+}
+a{
+	text-decoration:none;
+	&:hover{
+		outline:none;
+		border:none;
+	}
+}
+img { vertical-align:bottom; max-width:100%;}
+ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,p,figure,figcaption,input,textarea{
+	 @include mp0;
+	 list-style:none;
+ }
+ul:after,ol:after{
+	@include clear;
+}
+iframe{
+	border:none;
+	outline: none;
+}
+
+
+//レスポンシブでのsp/pc切り替えの場合使用
+.pc{
+	@include mq(xsmall){
+		display: none;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		display: inline-block;
+	}
+	@include mq(large){
+
+	}
+	@include mq(xlarge){
+	}
+}
+.sp{
+	@include mq(xsmall){
+		display: inline-block;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		display: none;
+	}
+	@include mq(large){
+
+	}
+	@include mq(xlarge){
+	}
+}

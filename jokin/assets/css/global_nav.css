@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/*
+======================================================================
+FOOTER
+====================================================================== */
+.gfooter {
+  background-color: #fff;
+  padding: 1rem 0;
+}
+.gfooter__inner {
+  max-width: 62.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.gfooter__body {
+  font-size: 10px;
+  color: #000;
+  text-align: center;
+  line-height: 1;
+  text-decoration: underline;
+}
+.gfooter__body ul {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+.gfooter__body ul li {
+  margin-right: 20px;
+}
+.gfooter__body ul li:last-child {
+  margin-right: 0;
+}
+.gfooter__body ul .gfooter_btn {
+  position: relative;
+  padding-left: 20px;
+}
+.gfooter__body ul .gfooter_btn::before {
+  content: "";
+  position: absolute;
+  background-image: url(/jokin/assets/img/top/footer_btn.png);
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gfooter__logo {
+  max-width: 172px;
+}
+@media all and (min-width: 768px) {
+
+}
+@media all and (max-width: 767px) {
+  .gfooter {
+    padding: calc(40 / 750 * 100%);;
+  }
+  .gfooter__body ul + ul{
+    margin-top: calc(20 / 750 *100%);
+  }
+}

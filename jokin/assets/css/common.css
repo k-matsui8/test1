@@ -1,0 +1,566 @@
+@charset "UTF-8";
+/* ==========================================================================
+  ELEMENT RESET
+========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  color: #000000;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+dd {
+  margin-left: 0;
+}
+ol,
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a {
+  outline: 0;
+}
+a:focus,
+button:focus {
+  outline: 0;
+}
+em {
+  font-style: normal;
+}
+figure {
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+}
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+input,
+button,
+select,
+textarea {
+  line-height: inherit;
+}
+textarea {
+  resize: vertical;
+}
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: inherit;
+}
+hr {
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+a {
+  display: block;
+}
+
+/* ==========================================================================
+  MEDIA QUERIES
+========================================================================== */
+/*
+@media all and (min-width: 768px),print {
+}
+@media all and (min-width: 980px),print {
+}
+@media all and (min-width: 1280px),print {
+}
+@media all and (min-width: 1440px),print {
+}
+@media all and (min-width: 1600px),print {
+}
+@media all and (min-width: 1920px),print {
+}
+@media all and (min-width: 768px) and (max-width: 979px) {
+}
+@media all and (max-width: 767px) {
+}
+@media all and (max-width: 639px) {
+}
+@media all and (max-width: 374px) {
+}
+@media all and (min-width: 640px) and (max-width: 767px) {
+}
+*/
+/*
+@media all and (min-width: 768px),print {
+}
+@media all and (max-width: 767px) {
+}
+*/
+/* --------------------------------------------------------------------------
+  jsからMedia Queries取得用 要<div id="mq"></div>
+-------------------------------------------------------------------------- */
+/* PC用 */
+#mq {
+  display: none;
+  font-family: 'pc';
+}
+/* TAB用 */
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  #mq {
+    font-family: 'tab';
+  }
+}
+/* SP用 */
+@media all and (max-width: 767px) {
+  #mq {
+    font-family: 'sp';
+  }
+}
+/* ==========================================================================
+  UTILL
+========================================================================== */
+/* 画像置換 */
+.u-ir {
+  display: block;
+  overflow: hidden;
+  font: 0/0 a;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+.u-ir::before {
+  display: block;
+  content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* PC、タブレットで画像置換 */
+@media all and (min-width: 768px), print {
+  .u-ir--tab-pc {
+    display: block;
+    overflow: hidden;
+    font: 0/0 a;
+    white-space: nowrap;
+    text-indent: 100%;
+  }
+}
+/* --------------------------------------------------------------------------
+  非表示
+-------------------------------------------------------------------------- */
+/* PCで非表示 */
+@media all and (min-width: 980px), print {
+  .u-hide-pc {
+    display: none!important;
+  }
+}
+/* PC、タブレットで非表示 */
+@media all and (min-width: 768px), print {
+  .u-hide-tab-pc {
+    display: none!important;
+  }
+}
+/* タブレットのみ非表示 */
+@media all and (min-width: 768px) and (max-width: 979px) {
+  .u-hide-tab {
+    display: none!important;
+  }
+}
+/* SPで非表示 */
+@media all and (max-width: 767px) {
+  .u-hide-sp {
+    display: none!important;
+  }
+}
+/* --------------------------------------------------------------------------
+  行揃え
+-------------------------------------------------------------------------- */
+.u-center {
+  text-align: center;
+}
+/* TAB,PCのみテキストセンター */
+@media all and (min-width: 768px), print {
+  .u-center-tab-pc {
+    text-align: center;
+  }
+}
+/* SPのみテキストセンター */
+@media all and (max-width: 767px) {
+  .u-center-sp {
+    text-align: center;
+  }
+}
+.u-justify {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+/* --------------------------------------------------------------------------
+  強調
+-------------------------------------------------------------------------- */
+strong,
+.u-strong {
+  color: #a02325;
+  font-weight: bold;
+}
+em,
+.u-em {
+  font-weight: bold;
+  font-style: normal;
+}
+.u-bold {
+  font-weight: bold;
+}
+
+/* ==========================================================================
+  TYPOGRAPHY
+========================================================================== */
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'YakuHanJPs_Noto', 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'YakuHanJP_Noto', 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+.u-font-metrics {
+  font-family: 'YakuHanJP_Noto', 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+.u-font-sys {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+}
+.u-font-en {
+  font-weight: 900;
+  font-family: 'Gothic A1', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+  ROOT FONT SIZE
+-------------------------------------------------------------------------- */
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+}
+@media all and (min-width: 980px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+@media all and (min-width: 1366px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 1600px) {
+  /* html {
+    font-size: 18px;
+  } */
+}
+@media all and (min-width: 1920px) {
+  /* html {
+    font-size: 20px;
+  } */
+}
+@media all and (min-width: 640px) and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 639px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 374px) {
+  /* 13px */
+  html {
+    font-size: 13px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+  上付き、下付き
+-------------------------------------------------------------------------- */
+.c-txt-l sub,
+.c-txt-l sup {
+  font-size: 54%;
+}
+.c-txt-l sup {
+  top: -0.64em;
+}
+.c-txt-l sub {
+  bottom: -0.1em;
+}
+@media all and (min-width: 768px) {
+  .c-txt-m sub,
+  .c-txt-m sup {
+    font-size: 54%;
+  }
+  .c-txt-m sup {
+    top: -0.8em;
+  }
+  .c-txt-m sub {
+    bottom: -0.1em;
+  }
+  .c-txt-s sub,
+  .c-txt-s sup {
+    font-size: 54%;
+  }
+  .c-txt-s sup {
+    top: -0.4em;
+  }
+  .c-txt-s sub {
+    bottom: -0.05em;
+  }
+}
+@media all and (max-width: 767px) {
+  .c-txt-m sub,
+  .c-txt-m sup {
+    font-size: 54%;
+  }
+  .c-txt-m sup {
+    top: -0.7em;
+  }
+  .c-txt-m sub {
+    bottom: -0.1em;
+  }
+  .c-txt-s sub,
+  .c-txt-s sup {
+    font-size: 60%;
+  }
+  .c-txt-s sup {
+    top: -0.6em;
+  }
+  .c-txt-s sub {
+    bottom: -0.1em;
+  }
+}
+
+
+/* ==========================================================================
+ICON
+========================================================================== */
+/* svg */
+.ico-svg, .logo-svg {
+  position: relative;
+  display: block;
+}
+.ico-svg > svg,
+.logo-svg > svg,
+.ico-svg > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.ico-svg::before,
+.logo-svg::before {
+  display: block;
+  content: "";
+  width: 100%;
+}
+.logo-svg::before {
+  padding-top: 15.3488372%;
+}
+@media print, screen and (min-width: 769px) {
+}
+@media print, screen and (max-width: 768px) {
+}
+
+/* ==========================================================================
+BUTTON
+========================================================================== */
+.c-btn {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fefe08;
+  font-size: 1.357142857rem;
+  line-height: 1.315789474;
+	display:-ms-flexbox;
+  display:flex;
+  -ms-justify-content: center;
+  justify-content: center;
+  position: relative;
+}
+.c-btn a {
+  text-align: center;
+	display:-ms-flexbox;
+  display:flex;
+  -ms-justify-content: center;
+  justify-content: center;
+	-ms-flex-align: center;
+  align-items: center;
+}
+.c-btn-allow .ico-svg {
+  width: 1.357142857rem;
+}
+.c-btn-rect .ico-svg {
+  width: .535714286rem;
+}
+.c-btn-allow span {
+  margin-right: 1.964285714rem;
+}
+@media print, screen and (min-width: 769px) {
+  .c-btn {
+    padding:1.428571429rem 1rem;
+  }
+  .c-btn--horizontal {
+    width: 3.4375rem;
+    font-size: .875rem;
+    line-height: 1;
+    padding: 2.875rem 1rem;
+  }
+  .c-btn--horizontal a {
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack: center;
+    justify-content:center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  .c-btn--horizontal .ico-svg {
+    margin-top: .625rem;
+  }
+  .c-btn--horizontal .ico-svg--search{
+    width: 1.5rem;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  .c-btn {
+    max-width: 320px;
+    padding:1.428571429rem 1rem;
+  }
+  .c-btn-allow a span {
+    margin-right: 0;
+  }
+  .c-btn-allow a .ico-svg {
+    position: absolute;
+    right: 5%;
+  }
+}
+
+/* ==========================================================================
+  LAYOUT
+========================================================================== */
+/* --------------------------------------------------------------------------
+  SECTION
+-------------------------------------------------------------------------- */
+.c-section--beige {
+  background: #f7f6ec;
+}
+.c-section--has-border {
+  border-bottom: 2px solid #1070b0;
+}
+@media all and (min-width: 768px) {
+  .content-container {
+    /* min-width: 960px; */
+  }
+  .c-section {
+  }
+  .c-section__inner {
+    max-width: 1100px;
+    /* padding: 0 calc(60 / 1100 *100%); */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .c-section__body {
+  }
+  .c-section--block .c-section__body {
+  }
+  .c-page-hero + .c-section {
+    margin-top: 4.325rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .c-section {
+  }
+  .c-section__inner {
+  }
+  .c-section__body {
+  }
+}
+/* --------------------------------------------------------------------------
+  TOPへ戻る
+-------------------------------------------------------------------------- */
+.c-page-top {
+  z-index: 99;
+  position: relative;
+}
+.c-page-top__btn {
+  position: fixed;
+  display: block;
+  width: 70px;
+  height: 70px;
+  right: 8px;
+  bottom: 15px;
+  cursor: pointer;
+}
+@media all and (min-width: 768px) {
+}
+@media all and (max-width: 767px) {
+  .c-page-top__btn {
+    width: calc(70 / 750 * 100%);
+    height: calc(70 / 750 * 100%);
+    right: 5px;
+    bottom: 5px;
+  }
+}

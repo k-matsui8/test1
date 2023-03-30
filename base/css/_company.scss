@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+.infobox{
+
+	@include mq(xsmall){
+		padding: 8px 16px;
+		@include font-size(9);
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding: 16px 40px;
+		@include font-size(10);
+	}
+	@include mq(large){
+		padding: 0px 80px 32px;
+		@include font-size(10);
+		width: 80%;
+		margin: 0 auto;
+
+	}
+	@include mq(xlarge){
+	}
+
+	a{
+		color: $r;
+		@include hover;
+		display: inline-block;
+		 padding: 8px;
+		 border: 1px solid #ddd;
+		 line-height: 1;
+	}
+}
+
+.toinfo{
+	text-align: center;
+	padding: 24px 0;
+	a{
+		display: inline-block;
+		padding: 16px;
+		color: #333;
+		border: 1px solid #999;
+		line-height: 1;
+		@include font-size(9);
+		@include hover;
+	}
+}
+.infolist{
+	li{
+
+		border-bottom: 1px solid #ddd;
+
+		@include mq(xsmall){
+			padding:16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			padding: 8px 16px;
+		}
+		@include mq(large){
+			padding: 8px;
+		}
+		@include mq(xlarge){
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+		a{
+			@include hover;
+			display: block;
+		}
+		time{
+			color: #666;
+
+			@include font-size(10);
+			padding-right: 24px;
+			@include mq(xsmall){
+				display: block;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: inline-block;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+		h3{
+			color: $r;
+			display: inline-block;
+			@include font-size(10);
+			font-weight: normal;
+		}
+	}
+}
+
+.partner{
+	@include font-size(10);
+	ol{
+		margin-bottom: 16px;
+		li{
+			text-align: center;
+			width: 100%;
+			border-bottom: 1px solid #ddd;
+			padding: 16px;
+		}
+	}
+	h2{
+		text-align: center;
+		@include font-size(15);
+		strong{
+			color: $r;
+		}
+	}
+}
+
+.flow{
+
+	@include mq(xsmall){
+		padding: 10px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding: 16px;
+	}
+	@include mq(large){
+		padding: 32px;
+	}
+	@include mq(xlarge){
+	}
+	li{
+		@include flex;
+		border-top: 2px solid #ddd;
+		margin-bottom: 16px;
+		@include mq(xsmall){
+			padding: 8px;
+			width: 100%;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			padding:16px;
+		}
+		@include mq(large){
+			padding: 24px;
+		}
+		@include mq(xlarge){
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+
+		.img{
+
+			@include mq(xsmall){
+				width: 100%;
+				padding-bottom: 16px;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 40%;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}		}
+		.text{
+
+			padding: 0 24px;
+			@include mq(xsmall){
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 60%;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}		}
+
+		h4{
+			color: #222;
+			margin-bottom: 16px;
+			@include mq(xsmall){
+				@include font-size(12);
+				//text-align: center;
+				padding-top: 16px;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				text-align: left;
+			}
+			@include mq(large){
+				@include font-size(13);
+			}
+			@include mq(xlarge){
+			}
+		}
+		p{
+			padding-bottom: 16px;
+			@include mq(xsmall){
+				@include font-size(8);
+				line-height: 1.8;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				@include font-size(9);
+				line-height: 2;
+			}
+			@include mq(xlarge){
+			}
+		}
+	}
+}
+
+.merit{
+	li{
+		width: 100%;
+		padding: 10px;
+		img{
+			margin-bottom: 16px;
+		}
+		ol{
+			li{
+					border: 1px solid #ddd;
+					margin-bottom: 8px;
+			}
+		}
+		h3{
+			margin-bottom: 16px;
+		}
+		h4{
+			margin-bottom: 4px;
+		}
+		p{
+			padding: 0px;
+			line-height: 1.5;
+		}
+
+
+	}
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* --------------------------------
+FONT STYLE
+-------------------------------- */
+
+
+/* font-size
+@include font-size(12);
+*/
+@mixin font-size($px) {
+  font-size: $px + px;
+  font-size: ($px / 10) + rem;
+	
+}
